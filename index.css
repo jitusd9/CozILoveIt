@@ -7,6 +7,11 @@ body{
     overflow: hidden;
 }
 
+.blue{
+    background: radial-gradient(ellipse at top left, #00ff84, rgba(181, 8, 255, 1)),
+    radial-gradient(ellipse at bottom right, rgb(195, 0, 255), #000);
+}
+
 :root{
     --smooth : ease-out;
 }
@@ -15,6 +20,42 @@ main{
     position: relative;
     width: 90%;
     float: right;
+}
+
+a{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.hl{
+    position: relative;
+    font-weight: 400;
+    color: #000;
+}
+
+.hl::before{
+    position: absolute;
+    content: "";
+    top: 0%;
+    left: 50%;
+    height: 100%;
+    width: 100%;
+    padding: 0 4px;
+    background-color: rgb(255, 174, 0);
+    z-index: -1;
+    transform:translateX(-50%);
+}
+
+.toggleBG{
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    z-index: 20;
+}
+
+.toggleBG img{
+    height: 120px;
+    filter: drop-shadow(0 10px 10px rgba(0,0,0,0.3));
 }
 
 nav{
@@ -303,6 +344,7 @@ nav{
 
 
  .content p{
+    font-family: 'Poppins', sans-serif;
     margin-left: 200px;
     color: white;
     font-weight: lighter;

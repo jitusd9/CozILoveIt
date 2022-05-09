@@ -40,3 +40,19 @@ aboutBtn.addEventListener('click', () => {
     welcome.classList.remove('displayWelcome');
     how.classList.remove('displayHow');
 })
+
+
+// // just for test 
+
+// const toggleBGButton = document.querySelector('.toggleBG');
+
+// toggleBGButton.addEventListener('mouseenter', () => {
+//     const blue = setInterval(() => {
+//         document.body.classList.toggle('blue');
+//     }, 1000);
+
+//     setTimeout(() => {
+//         clearInterval(blue);
+//     }, 3000);
+// })
+
