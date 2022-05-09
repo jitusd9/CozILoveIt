@@ -23,7 +23,9 @@ nav{
     height: 80px;
     width: 100%;
     padding: 0px 30px;
-    background-color: rgba(31, 31, 31, 1);
+    /* background: radial-gradient(circle at 10% -100%, rgb(69, 69, 69) , rgba(31,31,31,0) 20%), 
+    radial-gradient(circle at 80% 200%, rgb(69, 69, 69) , rgb(31,31,31) 20%); */
+    background: rgb(31,31,31);
     z-index: 10;
     display: flex;
     align-items: center;
@@ -128,16 +130,72 @@ nav{
     text-shadow: 0 20px 10px rgba(0, 0, 0, 0.2);
 }
 
-.hero .cta{
+.cta{
+    cursor: pointer;
     position: relative;
-    left: 120px;
-    padding: 16px 25px;
+    padding: 0px 20px;
+    height: 56px;
     font-size: 1.2rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     background-color: rgba(0, 0, 0, 0.1);
-    /* border-radius: 6px; */
-    border: 1px solid #fff;
+    display: inline-block;
+    border: 0.1px solid #fff;
     font-weight: bold;
+    z-index: 1;
+    overflow: hidden;
+    /* box-sizing: content-box; */
+}
+
+.cta button{
+    color: #000;
+    display: flex;
+    align-items: center;
+    transition: all 0.5s;
+    margin: 10px auto;
+    background-color: transparent;
+    transform: translateY(-130%);
+}
+
+.cta button:nth-child(2) img{
+    filter: invert(1);
+}
+
+.cta button:nth-child(2){
+    color: #fff;
+}
+
+.cta:hover button{
+    transform: translateY(0%);
+}
+
+.cta img{
+    height: 1.2rem;
+    width: 1.2rem;
+    margin-left: 10px;
+}
+
+.cta::after{
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: -100%;
+    left: 0%;
+    z-index: -1;
+    background-color: #fff;
+    transition: all 0.3s;
+}
+
+.cta:hover{
+    color: #000;
+}
+
+.cta:hover::after{
+    top: 0%;
+}
+
+.hero .cta{
+    left: 120px;
 }
 
 .section:nth-child(2) img{
@@ -187,6 +245,10 @@ nav{
     /* transform: translateX(0) translateZ(0px); */
 }
 
+.how .cta{
+    left: 200px;
+}
+
 /* About section  */
 
 .about {
@@ -198,7 +260,7 @@ nav{
     border: 1px solid transparent; 
     transform-style: preserve-3d;
     /* transform:translateX(100px) translateZ(100px); */
-    background: url(./_basicStyle/images/moonlight.svg) 90% 80% /20% no-repeat;
+    background: url(./basicStyle/images/moonlight.svg) 90% 80% /20% no-repeat;
     opacity: 0;
     pointer-events: none;
 }
