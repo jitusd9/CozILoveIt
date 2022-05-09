@@ -1,8 +1,8 @@
 /* loading google fonts  */
-@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Ubuntu&display=swap');
-
-    /* font-family: 'Nunito', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400&family=Poppins:wght@100;300;400;700&family=Ubuntu&display=swap');
+    /* font-family: 'Nunito', sans-serif; extralight200 regular400
     font-family: 'Ubuntu', sans-serif; */
+    /* font-family: 'Poppins', sans-serif; thin100 light300 regular400 bold700 */ 
 
   /* basic html tags  */
   /* navbar is fixed and height is 60px that's why main tag is shifted 60px below*/

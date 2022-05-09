@@ -1,0 +1,302 @@
+body{
+    background: radial-gradient(ellipse at top left, #ff8732, rgba(255, 8, 193, 0.671)),
+    radial-gradient(ellipse at bottom right, orangered, transparent);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+:root{
+    --smooth : ease-out;
+}
+
+main{
+    position: relative;
+    width: 90%;
+    float: right;
+}
+
+nav{
+    position: relative;
+    top: 80px;
+    height: 80px;
+    width: 100%;
+    padding: 0px 30px;
+    background-color: rgba(31, 31, 31, 1);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 20px 20px -10px rgba(0, 0, 0, 0.4);
+}
+
+.brand{
+    cursor: pointer;
+}
+
+.brand h1{
+    color: #f9f9f9;
+    font-size: 2rem;
+    text-shadow: 0 5px 5px #000;
+}
+
+.menu{
+    padding: 0;
+    list-style: none;
+    width: 400px;
+    margin-left: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.menu li{
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    color: #8e9bb1;
+    font-size: 1.4rem;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.menu li:hover{
+    color: #f3f3f3;
+}
+
+.container{
+    margin-top: 80px;
+    position: relative;
+    width: 100%;
+    min-height: 50vh;
+    z-index: 1;
+    perspective: 500px;
+}
+
+.welcome{
+    position: absolute;
+    display: flex;
+    transition: all 0.8s var(--smooth);
+    transform: translateX(-10%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.displayWelcome{
+    pointer-events: all;
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+.section{
+    position: relative;
+    flex: 1;
+    min-height: calc(100vh - 160px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg{
+    position: absolute;
+    width: 80%;
+    height: calc(100vh - 160px);
+    right: 0;
+    background-color: #2a2a2a;
+}
+
+.section .hero{
+    position: relative;
+}
+
+.hero h1{
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    font-size: 8rem;
+    margin: 0;
+    text-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+}
+
+.hero p{
+    font-family: 'Nunito', sans-serif;
+    margin-left: 40px;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #f3f3f3;
+    margin-top: 0px;
+    line-height: 2.8rem;
+    text-shadow: 0 20px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero .cta{
+    position: relative;
+    left: 120px;
+    padding: 16px 25px;
+    font-size: 1.2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.1);
+    /* border-radius: 6px; */
+    border: 1px solid #fff;
+    font-weight: bold;
+}
+
+.section:nth-child(2) img{
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* project section  */
+
+.project{
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 160px);
+    transition: all 0.3s var(--smooth);
+    border: 1px solid transparent; 
+    background: url(./_basicStyle/images/software.svg) 90% 80% /20% no-repeat;
+    transform: translateY(10%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.displayProject{
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0%);
+}
+
+/* How section  */
+
+.how{
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 160px);
+    transform-origin: top;
+    transition: all 0.3s var(--smooth);
+    border: 1px solid transparent; 
+    /* transform: translateX(-100px) translateZ(-100px); */
+    background: url(./_basicStyle/images/programmer.svg) 90% 80% /20% no-repeat;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.displayHow{
+    opacity: 1;
+    pointer-events: all;
+    /* transform: translateX(0) translateZ(0px); */
+}
+
+/* About section  */
+
+.about {
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 160px);
+    transform-origin: top;
+    transition: all 0.3s var(--smooth);
+    border: 1px solid transparent; 
+    transform-style: preserve-3d;
+    /* transform:translateX(100px) translateZ(100px); */
+    background: url(./_basicStyle/images/moonlight.svg) 90% 80% /20% no-repeat;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.displayAbout{
+    opacity: 1;
+    pointer-events: all;
+    /* transform: translateX(0) translateZ(0px); */
+}
+
+ .content{
+    position: relative;
+    width: 80%;
+    margin: 0px auto;
+}
+
+ .content .title{
+    position: relative;
+    text-align: right;
+}
+
+
+ .content .title h2{
+    position: relative;
+    font-size: 4rem;
+    color: white;
+    margin-block-end: 0.5rem;
+}
+
+ .content h2::before{
+    content: "";
+    position: absolute;
+    top: calc(100% - 0.7rem);
+    right: 200px;
+    width: 300px;
+    transform: translateY(-100%);
+    height: 4px;
+    background-color: white;
+}
+
+
+ .content p{
+    margin-left: 200px;
+    color: white;
+    font-weight: lighter;
+}
+
+
+ .content .sign{
+    position: relative;
+    height: 80px;
+    /* border: 1px solid red; */
+}
+
+ .content .sign img{
+    position: relative;
+    height: 80px;
+    width: auto;
+    left: 240px;
+    float: left;
+    filter: invert(1);
+}
+
+ .content .sign::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 320px;
+    width: 180px;
+    height: 1px;
+    background-color: white;
+}
+
+ .content .sign p{
+    position: relative;
+    margin-left: 300px;
+}
+
+ .content .sign p::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -100px;
+    width: 90px;
+    /* transform: translateY(-100%); */
+    height: 1px;
+    background-color: white;
+}
+
+/* how section  */
+
+/* ---------- WRITE EVERYTHING ABOVE THIS--------------- */
+/* these should overwrite main css  */
+.faded{
+    opacity: 0;
+}
+
+.gone{
+    display: none;
+}
+/* these should overwrite main css  */
