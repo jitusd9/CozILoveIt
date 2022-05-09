@@ -154,7 +154,7 @@ nav{
     height: calc(100vh - 160px);
     transition: all 0.3s var(--smooth);
     border: 1px solid transparent; 
-    background: url(./_basicStyle/images/software.svg) 90% 80% /20% no-repeat;
+    background: url(./basicStyle/images/software.svg) 90% 80% /20% no-repeat;
     transform: translateY(10%);
     opacity: 0;
     pointer-events: none;
@@ -176,7 +176,7 @@ nav{
     transition: all 0.3s var(--smooth);
     border: 1px solid transparent; 
     /* transform: translateX(-100px) translateZ(-100px); */
-    background: url(./_basicStyle/images/programmer.svg) 90% 80% /20% no-repeat;
+    background: url(./basicStyle/images/programmer.svg) 90% 80% /20% no-repeat;
     opacity: 0;
     pointer-events: none;
 }
