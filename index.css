@@ -2,9 +2,10 @@ body{
     background: radial-gradient(ellipse at top left, #ff8732, rgba(255, 8, 193, 0.671)),
     radial-gradient(ellipse at bottom right, orangered, transparent);
     background-repeat: no-repeat;
+    background-attachment: fixed;
     width: 100%;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
+    /* overflow: hidden; */
 }
 
 .blue{
@@ -58,6 +59,8 @@ a{
     filter: drop-shadow(0 10px 10px rgba(0,0,0,0.3));
 }
 
+/* navbar starts GLOBAL CSS IS ABOVE IT */
+
 nav{
     position: relative;
     top: 80px;
@@ -105,6 +108,87 @@ nav{
 .menu li:hover{
     color: #f3f3f3;
 }
+
+.menuCollapse{
+    display: none;
+}
+
+nav .toggleMenu{
+    display: none;
+    position: absolute;
+    width: 40px;
+    height: auto;
+    right: 30px;
+    z-index: 100;
+}
+
+nav .toggleMenu .top{
+    position: relative;
+    width: 40px;
+    height: 4px;
+    background-color: #00ff84;
+    transform-origin: right;
+    transform: translateY(-2px);
+    transition: all 0.5s;
+}
+
+nav .toggleMenu .bottom{
+    position: relative;
+    width: 40px;
+    height: 4px;
+    background-color: #00ff84;
+    transform-origin: right;
+    transform: translateY(2px);
+    transition: all 0.5s;
+}
+
+nav .menuClicked .top{
+    background-color: orangered;
+    transform: rotate(220deg) translateX(100%) translateY(-16px);
+}
+
+nav .menuClicked .bottom{
+    background-color: orangered;
+    transform: rotate(-220deg) translateX(100%) translateY(16px);
+}
+
+@media screen and (max-width : 1080px) {
+    
+    nav{
+        position: absolute;
+    }
+
+    nav .toggleMenu{
+        display: block;
+    }
+
+    .container{
+       top: 80px;
+    }
+    .menu{
+        position: absolute;
+        top: -50%;
+        left: 100%;
+        transform: translate(-50%, -50%);
+        background-color: #1f1f1f;
+        padding: 0;
+        list-style: none;
+        width: 100%;
+        margin-left: 170px;
+        z-index: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        transition: all 0.5s;
+    }
+
+    .showMenu{
+        left: 0%;
+    }
+
+}
+
+/* container css starts  */
 
 .container{
     margin-top: 80px;
@@ -245,6 +329,21 @@ nav{
     margin: 0 auto;
 }
 
+@media screen and (max-width : 1080px) {
+    .hero h1{
+        font-size: 4rem;
+    }
+
+    .welcome .section:nth-child(2){
+        display: none;
+    }
+
+    .hero .cta{
+        left: 40%;
+        transform: translateX(-50%);
+    }
+}
+
 /* project section  */
 
 .project{
@@ -254,7 +353,6 @@ nav{
     transition: all 0.3s var(--smooth);
     border: 1px solid transparent; 
     background: url(./basicStyle/images/software.svg) 90% 80% /20% no-repeat;
-    transform: translateY(10%);
     opacity: 0;
     pointer-events: none;
 }
@@ -262,7 +360,12 @@ nav{
 .displayProject{
     opacity: 1;
     pointer-events: all;
-    transform: translateY(0%);
+}
+
+@media screen and (max-width : 1080px){
+    .project{
+        background: none;
+    }
 }
 
 /* How section  */
@@ -290,6 +393,21 @@ nav{
     left: 200px;
 }
 
+@media screen and (max-width : 1080px){
+    .how{
+        background: none;
+    }
+    
+    .how .content p:nth-child(3),
+    .how .content p:nth-child(4){
+        display: none;
+    }
+
+    .how .cta{
+        left: 0;
+    }
+}
+
 /* About section  */
 
 .about {
@@ -310,6 +428,13 @@ nav{
     opacity: 1;
     pointer-events: all;
     /* transform: translateX(0) translateZ(0px); */
+}
+
+
+@media screen and (max-width : 1080px){
+    .about{
+        background: none;
+    }
 }
 
  .content{
@@ -392,15 +517,36 @@ nav{
     background-color: white;
 }
 
-/* how section  */
+/* nav section  */
 
-/* ---------- WRITE EVERYTHING ABOVE THIS--------------- */
-/* these should overwrite main css  */
-.faded{
-    opacity: 0;
+/* media query for responsive   */
+@media screen and (max-width : 1080px) {
+    .content{
+        width: 100%;
+    }
+
+    .content .title {
+        padding-right: 30px;
+    }
+    .content .title h2{
+        font-size: 2rem;
+    }
+
+    .content .title h2::before{
+        display: none;
+    }
+
+    .content .sign::before{
+        display: none;
+    }
+
+    .content .sign img{
+        margin: 0px;
+        left: 100;
+    }
+    
+    .content p{
+        margin: 0px;
+    }
 }
 
-.gone{
-    display: none;
-}
-/* these should overwrite main css  */

@@ -42,17 +42,12 @@ aboutBtn.addEventListener('click', () => {
 })
 
 
-// // just for test 
+//Toggle Hamburger Menu Icon
+const toggleMenuButton = document.querySelector('#toggleMenu');
+const menu = document.querySelector('.menu');
 
-// const toggleBGButton = document.querySelector('.toggleBG');
-
-// toggleBGButton.addEventListener('mouseenter', () => {
-//     const blue = setInterval(() => {
-//         document.body.classList.toggle('blue');
-//     }, 1000);
-
-//     setTimeout(() => {
-//         clearInterval(blue);
-//     }, 3000);
-// })
+toggleMenuButton.addEventListener('click', () => {
+    toggleMenuButton.classList.toggle('menuClicked');
+    menu.classList.toggle('showMenu');
+})
 
